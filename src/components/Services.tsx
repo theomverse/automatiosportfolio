@@ -1,21 +1,26 @@
-import { Brain, Workflow, Database } from "lucide-react";
+import { Brain, Workflow, Database, MessageSquare, BarChart3 } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 
 const services = [
   {
     icon: Brain,
-    title: "AI-Powered Lead Generation",
-    description: "Intelligent systems that find and qualify leads automatically, helping you focus on closing deals."
+    title: "AI Lead Generation Systems",
+    description: "Build automated systems that find and contact leads using AI and APIs."
   },
   {
     icon: Workflow,
-    title: "Workflow Automation with n8n & Zapier",
-    description: "Connect your tools and automate repetitive tasks. Build custom workflows that work while you sleep."
+    title: "Business Process Automation",
+    description: "Streamline workflows using tools like n8n, Zapier, and Google Sheets."
   },
   {
-    icon: Database,
-    title: "Data Collection & Processing with APIs",
-    description: "Extract, transform, and organize data from any source. Turn raw information into actionable insights."
+    icon: MessageSquare,
+    title: "AI Chatbots & Outreach Bots",
+    description: "Create smart bots that talk to leads and respond instantly."
+  },
+  {
+    icon: BarChart3,
+    title: "Data Integration & Reporting",
+    description: "Connect APIs, collect data, and show insights in dashboards."
   }
 ];
 
@@ -75,7 +80,7 @@ const Services = () => {
           </p>
         </div>
         
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
           {services.map((service, index) => (
             <ServiceCard key={service.title} service={service} index={index} />
           ))}

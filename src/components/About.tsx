@@ -28,11 +28,16 @@ const About = () => {
                 About <span className="gradient-text">Me</span>
               </h2>
               
+              <p className="text-lg text-muted-foreground leading-relaxed mb-6">
+                Hi, I'm <span className="text-foreground font-semibold">MR</span> — an AI Automation Freelancer passionate about building end-to-end systems that work for you 24/7.
+              </p>
+              
+              <p className="text-lg text-muted-foreground leading-relaxed mb-6">
+                I specialize in creating automation workflows using AI, APIs, and no-code tools like n8n and Zapier. My goal is simple — help small businesses and creators save hours every week with intelligent automation.
+              </p>
+              
               <p className="text-lg text-muted-foreground leading-relaxed mb-8">
-                I'm <span className="text-foreground font-semibold">MR</span>, an automation enthusiast who builds scalable AI systems using open tools like{" "}
-                <span className="text-primary">n8n</span>,{" "}
-                <span className="text-primary">Zapier</span>, and{" "}
-                <span className="text-primary">Gemini</span>. I turn complex workflows into simple, automated processes that save time and drive growth.
+                When I'm not automating, I'm learning about AI models and building projects that push creativity and productivity forward.
               </p>
 
               {/* Skills */}

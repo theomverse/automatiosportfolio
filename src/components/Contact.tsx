@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { Send } from "lucide-react";
+import { Send, Mail, Send as Telegram, Linkedin } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 
 const Contact = () => {
@@ -38,17 +38,18 @@ const Contact = () => {
   };
 
   return (
-    <section className="py-32 px-6 relative overflow-hidden">
+    <section id="contact" className="py-32 px-6 relative overflow-hidden">
       {/* Background gradient */}
       <div className="absolute inset-0 gradient-hero animate-gradient-shift opacity-20" />
       
       <div className="max-w-3xl mx-auto relative z-10">
         <div className="text-center mb-12 animate-fade-in">
           <h2 className="text-5xl md:text-6xl font-bold mb-6">
-            Let's build something <span className="gradient-text">smart</span> together
+            Let's Automate Your <span className="gradient-text">Business</span>
           </h2>
-          <p className="text-xl text-muted-foreground">
-            Ready to automate your business? Drop me a message.
+          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+            Ready to save time and grow faster with AI automation?<br />
+            Let's discuss your project — I usually reply within 24 hours.
           </p>
         </div>
 
@@ -98,6 +99,35 @@ const Contact = () => {
             <Send className="ml-2 h-5 w-5" />
           </Button>
         </form>
+
+        {/* Social Links */}
+        <div className="flex justify-center gap-6 mt-12 animate-fade-in">
+          <a 
+            href="mailto:your@email.com" 
+            className="w-14 h-14 rounded-full glass-card flex items-center justify-center glow-hover"
+            aria-label="Email"
+          >
+            <Mail className="w-6 h-6 text-primary" />
+          </a>
+          <a 
+            href="https://t.me/yourusername" 
+            target="_blank"
+            rel="noopener noreferrer"
+            className="w-14 h-14 rounded-full glass-card flex items-center justify-center glow-hover"
+            aria-label="Telegram"
+          >
+            <Telegram className="w-6 h-6 text-primary" />
+          </a>
+          <a 
+            href="https://linkedin.com/in/yourusername" 
+            target="_blank"
+            rel="noopener noreferrer"
+            className="w-14 h-14 rounded-full glass-card flex items-center justify-center glow-hover"
+            aria-label="LinkedIn"
+          >
+            <Linkedin className="w-6 h-6 text-primary" />
+          </a>
+        </div>
       </div>
     </section>
   );

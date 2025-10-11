@@ -4,21 +4,21 @@ import { Button } from "./ui/button";
 
 const projects = [
   {
-    title: "AI Local Lead Generator",
-    description: "Automated system that discovers and qualifies local business leads using AI-powered research and outreach.",
-    tags: ["AI", "Lead Gen", "Automation"],
+    title: "Automated Lead Scraper for Local Businesses",
+    description: "AI-powered system that automatically finds, qualifies, and contacts local business leads. Increased lead generation by 300% while reducing manual work.",
+    tags: ["n8n", "OpenAI", "Google Sheets"],
     videoPlaceholder: "https://www.loom.com/share/your-video-id-here"
   },
   {
     title: "Twitter Data Automation Pipeline",
-    description: "Real-time data extraction and analysis pipeline that monitors Twitter trends and generates actionable insights.",
-    tags: ["APIs", "Data Processing", "n8n"],
+    description: "Real-time monitoring system that tracks industry trends, analyzes sentiment, and generates daily insight reports automatically.",
+    tags: ["n8n", "Twitter API", "Airtable"],
     videoPlaceholder: "https://www.loom.com/share/your-video-id-here"
   },
   {
-    title: "Google Sheets → Chatbot Integration",
-    description: "Smart chatbot that pulls data from Google Sheets to answer customer queries instantly and accurately.",
-    tags: ["AI", "Integration", "Chatbot"],
+    title: "AI Customer Support Chatbot",
+    description: "Intelligent chatbot integrated with Google Sheets that answers customer questions 24/7 with 95% accuracy, reducing support tickets by 60%.",
+    tags: ["Gemini", "Zapier", "Google Sheets"],
     videoPlaceholder: "https://www.loom.com/share/your-video-id-here"
   }
 ];
@@ -84,7 +84,7 @@ const ProjectCard = ({ project, index }: { project: typeof projects[0]; index: n
         className="w-full justify-between text-muted-foreground hover:text-primary"
         onClick={() => window.open(project.videoPlaceholder, '_blank')}
       >
-        Watch Demo
+        View Case Study
         <ExternalLink className="w-4 h-4" />
       </Button>
     </div>
