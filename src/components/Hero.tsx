@@ -29,14 +29,14 @@ const Hero = () => {
       {/* Content - Left aligned */}
       <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-12 w-full animate-fade-in">
         <div className="max-w-3xl">
-          <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold mb-6 leading-[1.1] tracking-tight">
+          <h1 className="text-xl md:text-2xl font-bold mb-6 leading-tight tracking-tight">
             Building AI-Powered Automations That{" "}
             <span className="text-foreground block mt-2">
               Save You Time & Grow Your Business
             </span>
           </h1>
           
-          <p className="text-lg md:text-xl text-muted-foreground mb-10 max-w-2xl font-light leading-relaxed">
+          <p className="text-sm md:text-base text-muted-foreground mb-10 max-w-2xl font-bold leading-relaxed">
             I create intelligent workflows and lead-gen systems using AI, n8n, and Zapier — fully customized for your business.
           </p>
           
