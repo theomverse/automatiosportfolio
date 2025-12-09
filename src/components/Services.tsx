@@ -1,26 +1,30 @@
-import { Brain, Workflow, Database, MessageSquare, BarChart3 } from "lucide-react";
+import { Brain, Workflow, MessageSquare, BarChart3 } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 
 const services = [
   {
     icon: Brain,
-    title: "AI Lead Generation Systems",
-    description: "Build automated systems that find and contact leads using AI and APIs."
+    title: "Lead Capture Automation",
+    description: "Automatically collect, qualify, and follow up with leads from your website forms using n8n and Google Sheets.",
+    price: "Starting at ₹999"
   },
   {
     icon: Workflow,
-    title: "Business Process Automation",
-    description: "Streamline workflows using tools like n8n, Zapier, and Google Sheets."
+    title: "AI-Powered Sales Reporting",
+    description: "Weekly automated reports with AI insights, charts, and PDF delivery. No manual data entry needed.",
+    price: "Starting at ₹999"
   },
   {
     icon: MessageSquare,
-    title: "AI Chatbots & Outreach Bots",
-    description: "Create smart bots that talk to leads and respond instantly."
+    title: "Social Media Automation",
+    description: "Schedule and auto-post content to Instagram/Facebook on autopilot using n8n and Meta APIs.",
+    price: "Starting at ₹999"
   },
   {
     icon: BarChart3,
-    title: "Data Integration & Reporting",
-    description: "Connect APIs, collect data, and show insights in dashboards."
+    title: "Custom Workflow Automation",
+    description: "Tell me your repetitive task and I'll build a custom automation solution tailored to your business.",
+    price: "Custom pricing"
   }
 ];
 
@@ -62,7 +66,8 @@ const ServiceCard = ({ service, index }: { service: typeof services[0]; index: n
       </div>
       
       <h3 className="text-2xl font-semibold mb-4">{service.title}</h3>
-      <p className="text-muted-foreground leading-relaxed">{service.description}</p>
+      <p className="text-muted-foreground leading-relaxed mb-4">{service.description}</p>
+      <p className="text-sm text-primary font-medium">{service.price}</p>
     </div>
   );
 };

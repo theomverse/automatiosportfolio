@@ -4,21 +4,21 @@ import { Button } from "./ui/button";
 
 const projects = [
   {
-    title: "Automated Lead Scraper for Local Businesses",
-    description: "AI-powered system that automatically finds, qualifies, and contacts local business leads. Increased lead generation by 300% while reducing manual work.",
-    tags: ["n8n", "OpenAI", "Google Sheets"],
+    title: "SmartReport - AI Sales Intelligence",
+    description: "Automated weekly sales reports with AI analysis, interactive charts, and email delivery. Saves 4 hours/week for sales teams.",
+    tags: ["n8n", "Google Sheets", "Gemini AI", "QuickChart", "Gmail"],
     videoPlaceholder: "https://www.loom.com/share/your-video-id-here"
   },
   {
-    title: "Twitter Data Automation Pipeline",
-    description: "Real-time monitoring system that tracks industry trends, analyzes sentiment, and generates daily insight reports automatically.",
-    tags: ["n8n", "Twitter API", "Airtable"],
+    title: "Instagram Auto-Poster",
+    description: "Fetches NASA Astronomy Picture of the Day and posts to Instagram automatically. Daily content without manual work.",
+    tags: ["n8n", "NASA API", "Instagram Graph API", "Scheduling"],
     videoPlaceholder: "https://www.loom.com/share/your-video-id-here"
   },
   {
-    title: "AI Customer Support Chatbot",
-    description: "Intelligent chatbot integrated with Google Sheets that answers customer questions 24/7 with 95% accuracy, reducing support tickets by 60%.",
-    tags: ["Gemini", "Zapier", "Google Sheets"],
+    title: "Lead Capture System",
+    description: "Captures form submissions, saves to Google Sheets, sends thank you emails and notifies sales team instantly.",
+    tags: ["n8n", "Google Forms", "Google Sheets", "Gmail", "Webhooks"],
     videoPlaceholder: "https://www.loom.com/share/your-video-id-here"
   }
 ];

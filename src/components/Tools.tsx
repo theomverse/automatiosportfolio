@@ -1,13 +1,13 @@
 import { useEffect, useRef, useState } from "react";
 
 const tools = [
-  { name: "OpenAI", color: "text-primary" },
-  { name: "Gemini", color: "text-secondary" },
-  { name: "n8n", color: "text-accent" },
-  { name: "Zapier", color: "text-primary" },
-  { name: "Google Sheets", color: "text-secondary" },
-  { name: "Airtable", color: "text-accent" },
-  { name: "Firebase", color: "text-primary" }
+  { name: "OpenAI", description: "AI-powered analysis", color: "text-primary" },
+  { name: "Gemini", description: "Smart insights generation", color: "text-secondary" },
+  { name: "n8n", description: "Primary automation platform", color: "text-accent" },
+  { name: "QuickChart", description: "Chart generation", color: "text-primary" },
+  { name: "Google Sheets", description: "Data storage & reporting", color: "text-secondary" },
+  { name: "Airtable", description: "Advanced databases", color: "text-accent" },
+  { name: "Firebase", description: "Backend services", color: "text-primary" }
 ];
 
 const ToolCard = ({ tool, index }: { tool: typeof tools[0]; index: number }) => {
@@ -34,12 +34,13 @@ const ToolCard = ({ tool, index }: { tool: typeof tools[0]; index: number }) => 
   return (
     <div
       ref={cardRef}
-      className={`glass-card p-6 rounded-2xl flex items-center justify-center glow-hover transition-all duration-700 ${
+      className={`glass-card p-6 rounded-2xl flex flex-col items-center justify-center text-center glow-hover transition-all duration-700 ${
         isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
       }`}
       style={{ transitionDelay: `${index * 100}ms` }}
     >
-      <span className={`text-xl font-semibold ${tool.color}`}>{tool.name}</span>
+      <span className={`text-xl font-semibold ${tool.color} mb-2`}>{tool.name}</span>
+      <span className="text-xs text-muted-foreground">{tool.description}</span>
     </div>
   );
 };
