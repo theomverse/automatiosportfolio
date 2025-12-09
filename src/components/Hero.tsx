@@ -1,6 +1,12 @@
 import { Button } from "@/components/ui/button";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, CheckCircle } from "lucide-react";
 import heroBg from "@/assets/hero-bg.jpg";
+
+const badges = [
+  "3+ Live Projects Deployed",
+  "Available for Freelance Work",
+  "24-48 Hour Turnaround"
+];
 
 const Hero = () => {
   const scrollToProjects = () => {
@@ -29,16 +35,29 @@ const Hero = () => {
       {/* Content - Left aligned */}
       <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-12 w-full animate-fade-in">
         <div className="max-w-3xl">
-          <h1 className="text-xl md:text-2xl font-bold mb-6 leading-tight tracking-tight">
-            Building AI-Powered Automations That{" "}
-            <span className="text-foreground block mt-2">
-              Save You Time & Grow Your Business
+          <h1 className="text-2xl md:text-4xl lg:text-5xl font-bold mb-6 leading-tight tracking-tight">
+            I Build n8n Automations That{" "}
+            <span className="gradient-text block mt-2">
+              Save Businesses 15+ Hours Per Week
             </span>
           </h1>
           
-          <p className="text-sm md:text-base text-muted-foreground mb-10 max-w-2xl font-bold leading-relaxed">
-            I create intelligent workflows and lead-gen systems using AI, n8n, and Zapier — fully customized for your business.
+          <p className="text-base md:text-lg text-muted-foreground mb-8 max-w-2xl font-medium leading-relaxed">
+            Data Science Student & AI Automation Specialist | Helping SMBs automate sales, marketing & reporting workflows
           </p>
+
+          {/* Badges */}
+          <div className="flex flex-wrap gap-3 mb-10">
+            {badges.map((badge) => (
+              <div 
+                key={badge}
+                className="flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 text-sm md:text-base"
+              >
+                <CheckCircle className="w-4 h-4 text-primary" />
+                <span className="text-foreground">{badge}</span>
+              </div>
+            ))}
+          </div>
           
           <div className="flex flex-wrap gap-4">
             <Button 
