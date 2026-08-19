@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { Send, Mail, Linkedin, MessageCircle, Package } from "lucide-react";
+import { Send, Mail, Linkedin, Github, Package } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 
 const Contact = () => {
