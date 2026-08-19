@@ -1,11 +1,12 @@
 import { Code2, Zap, Sparkles, Cpu } from "lucide-react";
 
 const skills = [
-  { icon: Code2, label: "n8n & APIs" },
-  { icon: Zap, label: "API Integration" },
-  { icon: Sparkles, label: "AI & Gemini" },
+  { icon: Code2, label: "n8n" },
+  { icon: Sparkles, label: "AI Agents" },
+  { icon: Zap, label: "API Integrations" },
   { icon: Cpu, label: "Workflow Automation" }
 ];
+
 
 const About = () => {
   return (
@@ -29,32 +30,17 @@ const About = () => {
               </h2>
               
               <p className="text-lg text-muted-foreground leading-relaxed mb-6">
-                Hi, I'm <span className="text-foreground font-semibold">Mohith Reddy</span> — a Data Science student and n8n Automation Specialist from India.
-              </p>
-              
-              <p className="text-lg text-muted-foreground leading-relaxed mb-6">
-                I help small businesses and content creators eliminate repetitive tasks by building custom AI-powered workflows using n8n, Google Sheets, and APIs.
-              </p>
-              
-              <p className="text-lg text-muted-foreground leading-relaxed mb-4">
-                My automation systems have saved clients 15+ hours per week on tasks like:
+                Hi, I'm <span className="text-foreground font-semibold">Mohith Reddy</span>, a Computer Science student and Automation Developer.
               </p>
 
-              <ul className="text-lg text-muted-foreground leading-relaxed mb-6 space-y-2">
-                <li className="flex items-center gap-2">
-                  <span className="text-primary">→</span> Weekly sales reporting
-                </li>
-                <li className="flex items-center gap-2">
-                  <span className="text-primary">→</span> Lead capture & follow-up
-                </li>
-                <li className="flex items-center gap-2">
-                  <span className="text-primary">→</span> Social media scheduling
-                </li>
-              </ul>
-              
-              <p className="text-lg text-muted-foreground leading-relaxed mb-8">
-                When I'm not building automations, I'm exploring new AI models and creating tools that boost productivity.
+              <p className="text-lg text-muted-foreground leading-relaxed mb-6">
+                I build AI-powered workflows, automation systems, and integrations using n8n, AI models, APIs, and cloud services.
               </p>
+
+              <p className="text-lg text-muted-foreground leading-relaxed mb-8">
+                My focus is helping businesses, creators, and automation agencies eliminate repetitive work through reliable automation systems.
+              </p>
+
 
               {/* Skills */}
               <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
