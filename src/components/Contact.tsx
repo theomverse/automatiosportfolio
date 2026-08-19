@@ -44,13 +44,14 @@ const Contact = () => {
       
       <div className="max-w-4xl mx-auto relative z-10">
         <div className="text-center mb-12 animate-fade-in">
-          <h2 className="text-5xl md:text-6xl font-bold mb-6">
-            Ready to Save Time with <span className="gradient-text">Automation?</span>
+          <h2 className="text-4xl md:text-5xl font-bold mb-6">
+            Let's Build Your <span className="gradient-text">Automation</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Let's discuss your project — I usually reply within 24 hours.
+            Need help building an automation system or looking for white-label development support? Let's connect.
           </p>
         </div>
+
 
         <form onSubmit={handleSubmit} className="glass-card p-8 md:p-12 rounded-3xl space-y-6 animate-fade-in-up">
           <div>
@@ -104,22 +105,24 @@ const Contact = () => {
 
         {/* Other Ways to Connect */}
         <div className="mt-16 glass-card p-8 md:p-12 rounded-3xl animate-fade-in">
-          <h3 className="text-2xl font-bold mb-8 text-center">Other Ways to Connect</h3>
+          <h3 className="text-2xl font-bold mb-8 text-center">Find Me Here</h3>
           
           <div className="grid md:grid-cols-3 gap-6">
             <a 
-              href="mailto:omverse69@example.com" 
+              href="https://github.com/" 
+              target="_blank"
+              rel="noopener noreferrer"
               className="flex items-center gap-4 p-4 rounded-2xl bg-muted/30 hover:bg-muted/50 transition-all glow-hover"
             >
               <div className="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center">
-                <Mail className="w-6 h-6 text-primary" />
+                <Github className="w-6 h-6 text-primary" />
               </div>
               <div>
-                <p className="text-sm text-muted-foreground">Email</p>
-                <p className="font-medium text-foreground">omverse69@example.com</p>
+                <p className="text-sm text-muted-foreground">GitHub</p>
+                <p className="font-medium text-foreground">View my repositories</p>
               </div>
             </a>
-            
+
             <a 
               href="https://www.linkedin.com/in/kamasani-mohith-reddy-1b1239352" 
               target="_blank"
@@ -134,22 +137,21 @@ const Contact = () => {
                 <p className="font-medium text-foreground">Mohith Reddy</p>
               </div>
             </a>
-            
+
             <a 
-              href="https://wa.me/91XXXXXXXXXX" 
-              target="_blank"
-              rel="noopener noreferrer"
+              href="mailto:omverse69@example.com" 
               className="flex items-center gap-4 p-4 rounded-2xl bg-muted/30 hover:bg-muted/50 transition-all glow-hover"
             >
               <div className="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center">
-                <MessageCircle className="w-6 h-6 text-primary" />
+                <Mail className="w-6 h-6 text-primary" />
               </div>
               <div>
-                <p className="text-sm text-muted-foreground">WhatsApp</p>
-                <p className="font-medium text-foreground">+91-XXXXXXXXXX</p>
+                <p className="text-sm text-muted-foreground">Email</p>
+                <p className="font-medium text-foreground">omverse69@example.com</p>
               </div>
             </a>
           </div>
+
 
           {/* Free Consultation Note */}
           <div className="mt-8 p-4 rounded-2xl bg-primary/10 border border-primary/20 flex items-start gap-3">
