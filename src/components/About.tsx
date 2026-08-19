@@ -10,7 +10,7 @@ const skills = [
 
 const About = () => {
   return (
-    <section className="py-32 px-6 relative">
+    <section id="about" className="py-32 px-6 relative">
       <div className="max-w-5xl mx-auto">
         <div className="glass-card p-12 md:p-16 rounded-3xl animate-fade-in-up">
           <div className="flex flex-col md:flex-row items-center gap-12">
