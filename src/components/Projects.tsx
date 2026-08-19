@@ -1,75 +1,110 @@
-import { ExternalLink, Play } from "lucide-react";
+import { Github, Play } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 import { Button } from "./ui/button";
 
-const projects = [
+const GITHUB_URL = "https://github.com/";
+
+const caseStudies = [
   {
-    title: "SmartReport - AI Sales Intelligence",
-    description: "Automated weekly sales reports with AI analysis, interactive charts, and email delivery. Saves 4 hours/week for sales teams.",
-    tags: ["n8n", "Google Sheets", "Gemini AI", "QuickChart", "Gmail"],
-    videoPlaceholder: "https://www.loom.com/share/your-video-id-here"
+    title: "AI Lead Qualification Agent",
+    problem: "Sales teams waste hours manually reviewing and scoring inbound leads.",
+    solution:
+      "An AI agent reads every inbound submission, scores it against ICP criteria, enriches it, and routes qualified leads straight to the CRM with a summary for the rep.",
+    stack: ["n8n", "OpenAI", "Airtable", "Webhooks", "Gmail"],
+    flow: "Lead Form → n8n → AI Model → CRM → Email Notification"
   },
   {
-    title: "Instagram Auto-Poster",
-    description: "Fetches NASA Astronomy Picture of the Day and posts to Instagram automatically. Daily content without manual work.",
-    tags: ["n8n", "NASA API", "Instagram Graph API", "Scheduling"],
-    videoPlaceholder: "https://www.loom.com/share/your-video-id-here"
+    title: "AI SDR System",
+    problem: "Outbound prospecting is repetitive and inconsistent at scale.",
+    solution:
+      "Automated prospect research, personalized first-touch copy generation, and multi-step follow-up sequencing with reply detection and handoff to a human.",
+    stack: ["n8n", "OpenAI", "Google Sheets", "Email API"],
+    flow: "Prospect List → n8n → Research + AI Copy → Email Sequence → Reply Handoff"
   },
   {
-    title: "Lead Capture System",
-    description: "Captures form submissions, saves to Google Sheets, sends thank you emails and notifies sales team instantly.",
-    tags: ["n8n", "Google Forms", "Google Sheets", "Gmail", "Webhooks"],
-    videoPlaceholder: "https://www.loom.com/share/your-video-id-here"
+    title: "Customer Support Booking Workflow",
+    problem: "Support inboxes were flooded with scheduling and FAQ requests.",
+    solution:
+      "An AI support agent answers common questions from a knowledge base, books meetings on the calendar, and escalates edge cases to a human with full context.",
+    stack: ["n8n", "Gemini", "Google Calendar", "Gmail", "Webhooks"],
+    flow: "Message → n8n → AI Agent → Knowledge Base → Calendar Booking → Escalation"
+  },
+  {
+    title: "AI Content Repurposing Agent",
+    problem: "Creators spend hours reformatting one piece of content for every channel.",
+    solution:
+      "One source asset is transcribed, summarized, and rewritten into channel-native posts, then queued for scheduled publishing and approval.",
+    stack: ["n8n", "OpenAI", "Notion", "Social APIs"],
+    flow: "Source Content → n8n → AI Rewrite → Approval → Scheduled Publishing"
+  },
+  {
+    title: "SmartReport AI Sales Intelligence",
+    problem: "Weekly sales reporting was manual, slow, and error-prone.",
+    solution:
+      "Sales data is pulled automatically, analyzed by AI for trends and anomalies, visualized as charts, and delivered as a report every week.",
+    stack: ["n8n", "Google Sheets", "Gemini", "QuickChart", "Gmail"],
+    flow: "Google Sheets → n8n → AI Analysis → Charts → Email Report"
   }
 ];
 
-const ProjectCard = ({ project, index }: { project: typeof projects[0]; index: number }) => {
+const otherProjects = [
+  {
+    title: "NASA Instagram Auto-Poster",
+    description:
+      "Fetches NASA's Astronomy Picture of the Day and publishes it to Instagram daily with generated captions.",
+    stack: ["n8n", "NASA API", "Instagram Graph API"]
+  },
+  {
+    title: "BBC News Automation",
+    description:
+      "Monitors news feeds, filters by topic, summarizes articles with AI, and distributes digests automatically.",
+    stack: ["n8n", "RSS", "AI Summarization", "Email"]
+  }
+];
+
+const CaseStudyCard = ({ study, index }: { study: typeof caseStudies[0]; index: number }) => {
   const [isVisible, setIsVisible] = useState(false);
   const cardRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-        }
-      },
+      ([entry]) => entry.isIntersecting && setIsVisible(true),
       { threshold: 0.1 }
     );
-
-    if (cardRef.current) {
-      observer.observe(cardRef.current);
-    }
-
+    if (cardRef.current) observer.observe(cardRef.current);
     return () => observer.disconnect();
   }, []);
 
   return (
-    <div
+    <article
       ref={cardRef}
       className={`glass-card p-8 rounded-3xl glow-hover transition-all duration-700 ${
-        isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+        isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
       }`}
-      style={{ transitionDelay: `${index * 150}ms` }}
+      style={{ transitionDelay: `${index * 100}ms` }}
     >
-      {/* Video placeholder */}
-      <div className="relative mb-6 rounded-2xl overflow-hidden bg-muted aspect-video flex items-center justify-center group cursor-pointer">
-        <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-secondary/20" />
-        <Button
-          variant="ghost"
-          size="lg"
-          className="relative z-10 w-16 h-16 rounded-full bg-primary/90 hover:bg-primary text-primary-foreground glow-border"
-          onClick={() => window.open(project.videoPlaceholder, '_blank')}
-        >
-          <Play className="w-6 h-6" />
-        </Button>
+      <h3 className="text-2xl font-semibold mb-6">{study.title}</h3>
+
+      <div className="grid md:grid-cols-2 gap-6 mb-6">
+        <div>
+          <p className="text-sm font-semibold uppercase tracking-wide text-primary mb-2">Problem</p>
+          <p className="text-muted-foreground leading-relaxed">{study.problem}</p>
+        </div>
+        <div>
+          <p className="text-sm font-semibold uppercase tracking-wide text-primary mb-2">Solution</p>
+          <p className="text-muted-foreground leading-relaxed">{study.solution}</p>
+        </div>
       </div>
 
-      <h3 className="text-2xl font-semibold mb-3">{project.title}</h3>
-      <p className="text-muted-foreground mb-4 leading-relaxed">{project.description}</p>
-      
-      <div className="flex flex-wrap gap-2 mb-4">
-        {project.tags.map((tag) => (
+      <div className="mb-6">
+        <p className="text-sm font-semibold uppercase tracking-wide text-primary mb-2">Workflow</p>
+        <div className="rounded-2xl bg-muted/30 border border-border/60 px-4 py-3 overflow-x-auto">
+          <code className="text-sm text-foreground whitespace-nowrap">{study.flow}</code>
+        </div>
+      </div>
+
+      <div className="flex flex-wrap gap-2 mb-6">
+        {study.stack.map((tag) => (
           <span
             key={tag}
             className="px-3 py-1 text-sm rounded-full bg-primary/10 text-primary border border-primary/20"
@@ -79,35 +114,63 @@ const ProjectCard = ({ project, index }: { project: typeof projects[0]; index: n
         ))}
       </div>
 
-      <Button
-        variant="ghost"
-        className="w-full justify-between text-muted-foreground hover:text-primary"
-        onClick={() => window.open(project.videoPlaceholder, '_blank')}
-      >
-        View Case Study
-        <ExternalLink className="w-4 h-4" />
-      </Button>
-    </div>
+      <div className="flex flex-wrap gap-3">
+        <Button variant="outline" className="rounded-full" disabled>
+          <Play className="w-4 h-4 mr-2" />
+          Demo Video — Coming Soon
+        </Button>
+        <Button
+          variant="ghost"
+          className="rounded-full"
+          onClick={() => window.open(GITHUB_URL, "_blank", "noopener,noreferrer")}
+        >
+          <Github className="w-4 h-4 mr-2" />
+          View on GitHub
+        </Button>
+      </div>
+    </article>
   );
 };
 
 const Projects = () => {
   return (
-    <section id="projects" className="py-32 px-6 relative">
-      <div className="max-w-7xl mx-auto">
+    <section id="projects" className="py-28 px-6 relative">
+      <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16 animate-fade-in">
-          <h2 className="text-5xl md:text-6xl font-bold mb-6">
-            Featured <span className="gradient-text">Projects</span>
+          <h2 className="text-4xl md:text-5xl font-bold mb-4">
+            Featured <span className="gradient-text">Case Studies</span>
           </h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Real automation systems that deliver measurable results
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+            Real automation systems, the problems they solved, and how they were built
           </p>
         </div>
-        
-        <div className="grid md:grid-cols-3 gap-8">
-          {projects.map((project, index) => (
-            <ProjectCard key={project.title} project={project} index={index} />
+
+        <div className="space-y-8">
+          {caseStudies.map((study, index) => (
+            <CaseStudyCard key={study.title} study={study} index={index} />
           ))}
+        </div>
+
+        <div className="mt-20">
+          <h3 className="text-2xl md:text-3xl font-bold mb-8 text-center">Other Projects</h3>
+          <div className="grid md:grid-cols-2 gap-8">
+            {otherProjects.map((project) => (
+              <div key={project.title} className="glass-card p-8 rounded-3xl glow-hover">
+                <h4 className="text-xl font-semibold mb-3">{project.title}</h4>
+                <p className="text-muted-foreground mb-4 leading-relaxed">{project.description}</p>
+                <div className="flex flex-wrap gap-2">
+                  {project.stack.map((tag) => (
+                    <span
+                      key={tag}
+                      className="px-3 py-1 text-sm rounded-full bg-muted/40 text-muted-foreground border border-border/60"
+                    >
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </section>

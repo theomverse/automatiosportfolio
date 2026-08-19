@@ -3,10 +3,11 @@ import { ArrowRight, CheckCircle } from "lucide-react";
 import heroBg from "@/assets/hero-bg.jpg";
 
 const badges = [
-  "3+ Live Projects Deployed",
-  "Available for Freelance Work",
-  "24-48 Hour Turnaround"
+  "20+ Automation Projects Built",
+  "AI Agents & Workflow Automation",
+  "Available for White-Label Client Work"
 ];
+
 
 const Hero = () => {
   const scrollToProjects = () => {
@@ -21,30 +22,31 @@ const Hero = () => {
     <section className="relative min-h-screen flex items-center overflow-hidden">
       {/* Hero background image */}
       <div 
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-30"
         style={{ backgroundImage: `url(${heroBg})` }}
       />
       
       {/* Dark overlay for better text readability */}
-      <div className="absolute inset-0 bg-background/30" />
+      <div className="absolute inset-0 bg-background/70" />
       
       {/* Additional atmospheric glow effects */}
-      <div className="absolute top-1/3 right-1/4 w-[500px] h-[500px] bg-primary/20 rounded-full blur-[150px] animate-glow-pulse" />
-      <div className="absolute bottom-1/4 right-1/3 w-[400px] h-[400px] bg-secondary/15 rounded-full blur-[120px]" />
+      <div className="absolute top-1/3 right-1/4 w-[500px] h-[500px] bg-primary/15 rounded-full blur-[150px] animate-glow-pulse" />
+      <div className="absolute bottom-1/4 right-1/3 w-[400px] h-[400px] bg-secondary/10 rounded-full blur-[120px]" />
       
       {/* Content - Left aligned */}
       <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-12 w-full animate-fade-in">
         <div className="max-w-3xl">
-          <h1 className="text-2xl md:text-4xl lg:text-5xl font-bold mb-6 leading-tight tracking-tight">
-            I Build n8n Automations That{" "}
+          <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight tracking-tight">
+            AI Automation Developer &{" "}
             <span className="gradient-text block mt-2">
-              Save Businesses 15+ Hours Per Week
+              n8n Specialist
             </span>
           </h1>
           
           <p className="text-base md:text-lg text-muted-foreground mb-8 max-w-2xl font-medium leading-relaxed">
-            Data Science Student & AI Automation Specialist | Helping SMBs automate sales, marketing & reporting workflows
+            I build AI agents, business automations, lead generation systems, customer support workflows, and API integrations using n8n.
           </p>
+
 
           {/* Badges */}
           <div className="flex flex-wrap gap-3 mb-10">
@@ -66,7 +68,7 @@ const Hero = () => {
               className="group text-base md:text-lg px-8 py-6 h-auto bg-foreground hover:bg-foreground/90 text-background rounded-full relative overflow-hidden transition-all duration-300"
             >
               <span className="relative z-10 flex items-center gap-2">
-                See My Work
+                View Projects
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </span>
               {/* Button glow effect */}
