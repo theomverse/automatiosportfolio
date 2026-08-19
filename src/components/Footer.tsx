@@ -27,7 +27,7 @@ const Footer = () => {
               onClick={() => scrollToSection('services')}
               className="text-muted-foreground hover:text-primary transition-colors"
             >
-              Pricing
+              Services
             </button>
             <button 
               onClick={() => scrollToSection('contact')}
