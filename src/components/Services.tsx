@@ -62,19 +62,19 @@ const ServiceCard = ({ service, index }: { service: typeof services[0]; index: n
   return (
     <div
       ref={cardRef}
-      className={`glass-card p-8 rounded-3xl glow-hover transition-all duration-700 ${
+      className={`glass-card p-8 rounded-3xl glow-hover transition-all duration-700 bg-white/80 ${
         isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
       }`}
       style={{ transitionDelay: `${index * 120}ms` }}
     >
-      <div className="w-12 h-12 rounded-2xl bg-primary/15 flex items-center justify-center mb-5">
-        <Icon className="w-6 h-6 text-primary" />
+      <div className="w-12 h-12 rounded-2xl bg-[#111111]/10 flex items-center justify-center mb-5">
+        <Icon className="w-6 h-6 text-[#111111]" />
       </div>
-      <h3 className="text-xl font-semibold mb-4">{service.title}</h3>
+      <h3 className="text-xl font-semibold mb-4 text-[#111111]">{service.title}</h3>
       <ul className="space-y-2">
         {service.items.map((item) => (
-          <li key={item} className="flex items-start gap-2 text-muted-foreground">
-            <span className="text-primary mt-0.5">→</span>
+          <li key={item} className="flex items-start gap-2 text-[#615e5b]">
+            <span className="text-[#111111] mt-0.5">→</span>
             <span>{item}</span>
           </li>
         ))}
@@ -85,13 +85,13 @@ const ServiceCard = ({ service, index }: { service: typeof services[0]; index: n
 
 const Services = () => {
   return (
-    <section id="services" className="py-28 px-6 relative">
+    <section id="services" className="py-28 px-6 relative bg-[#f3efeb]">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16 animate-fade-in">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">
+          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-[#111111]">
             Available <span className="gradient-text">Services</span>
           </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-lg text-[#615e5b] max-w-2xl mx-auto">
             Automation and AI development support for businesses, creators, and agencies
           </p>
         </div>
