@@ -78,28 +78,28 @@ const CaseStudyCard = ({ study, index }: { study: typeof caseStudies[0]; index: 
   return (
     <article
       ref={cardRef}
-      className={`glass-card p-8 rounded-3xl glow-hover transition-all duration-700 ${
+      className={`glass-card p-8 rounded-3xl glow-hover transition-all duration-700 bg-white ${
         isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
       }`}
       style={{ transitionDelay: `${index * 100}ms` }}
     >
-      <h3 className="text-2xl font-semibold mb-6">{study.title}</h3>
+      <h3 className="text-2xl font-semibold mb-6 text-[#111111]">{study.title}</h3>
 
       <div className="grid md:grid-cols-2 gap-6 mb-6">
         <div>
-          <p className="text-sm font-semibold uppercase tracking-wide text-primary mb-2">Problem</p>
-          <p className="text-muted-foreground leading-relaxed">{study.problem}</p>
+          <p className="text-sm font-semibold uppercase tracking-wide text-[#615e5b] mb-2">Problem</p>
+          <p className="text-[#615e5b] leading-relaxed">{study.problem}</p>
         </div>
         <div>
-          <p className="text-sm font-semibold uppercase tracking-wide text-primary mb-2">Solution</p>
-          <p className="text-muted-foreground leading-relaxed">{study.solution}</p>
+          <p className="text-sm font-semibold uppercase tracking-wide text-[#615e5b] mb-2">Solution</p>
+          <p className="text-[#615e5b] leading-relaxed">{study.solution}</p>
         </div>
       </div>
 
       <div className="mb-6">
-        <p className="text-sm font-semibold uppercase tracking-wide text-primary mb-2">Workflow</p>
-        <div className="rounded-2xl bg-muted/30 border border-border/60 px-4 py-3 overflow-x-auto">
-          <code className="text-sm text-foreground whitespace-nowrap">{study.flow}</code>
+        <p className="text-sm font-semibold uppercase tracking-wide text-[#615e5b] mb-2">Workflow</p>
+        <div className="rounded-2xl bg-[#f3efeb] border border-[#dfddda] px-4 py-3 overflow-x-auto">
+          <code className="text-sm text-[#111111] whitespace-nowrap">{study.flow}</code>
         </div>
       </div>
 
@@ -107,7 +107,7 @@ const CaseStudyCard = ({ study, index }: { study: typeof caseStudies[0]; index: 
         {study.stack.map((tag) => (
           <span
             key={tag}
-            className="px-3 py-1 text-sm rounded-full bg-primary/10 text-primary border border-primary/20"
+            className="px-3 py-1 text-sm rounded-full bg-[#111111]/5 text-[#111111] border border-[#111111]/10"
           >
             {tag}
           </span>
@@ -115,13 +115,13 @@ const CaseStudyCard = ({ study, index }: { study: typeof caseStudies[0]; index: 
       </div>
 
       <div className="flex flex-wrap gap-3">
-        <Button variant="outline" className="rounded-full" disabled>
+        <Button variant="outline" className="rounded-full border-[#dfddda] text-[#111111]" disabled>
           <Play className="w-4 h-4 mr-2" />
           Demo Video — Coming Soon
         </Button>
         <Button
           variant="ghost"
-          className="rounded-full"
+          className="rounded-full text-[#111111] hover:bg-[#f3efeb]"
           onClick={() => window.open(GITHUB_URL, "_blank", "noopener,noreferrer")}
         >
           <Github className="w-4 h-4 mr-2" />
@@ -134,13 +134,13 @@ const CaseStudyCard = ({ study, index }: { study: typeof caseStudies[0]; index: 
 
 const Projects = () => {
   return (
-    <section id="projects" className="py-28 px-6 relative">
+    <section id="projects" className="py-28 px-6 relative bg-white">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16 animate-fade-in">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">
+          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-[#111111]">
             Featured <span className="gradient-text">Case Studies</span>
           </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-lg text-[#615e5b] max-w-2xl mx-auto">
             Real automation systems, the problems they solved, and how they were built
           </p>
         </div>
@@ -152,17 +152,17 @@ const Projects = () => {
         </div>
 
         <div className="mt-20">
-          <h3 className="text-2xl md:text-3xl font-bold mb-8 text-center">Other Projects</h3>
+          <h3 className="text-2xl md:text-3xl font-bold mb-8 text-center text-[#111111]">Other Projects</h3>
           <div className="grid md:grid-cols-2 gap-8">
             {otherProjects.map((project) => (
-              <div key={project.title} className="glass-card p-8 rounded-3xl glow-hover">
-                <h4 className="text-xl font-semibold mb-3">{project.title}</h4>
-                <p className="text-muted-foreground mb-4 leading-relaxed">{project.description}</p>
+              <div key={project.title} className="glass-card p-8 rounded-3xl glow-hover bg-white">
+                <h4 className="text-xl font-semibold mb-3 text-[#111111]">{project.title}</h4>
+                <p className="text-[#615e5b] mb-4 leading-relaxed">{project.description}</p>
                 <div className="flex flex-wrap gap-2">
                   {project.stack.map((tag) => (
                     <span
                       key={tag}
-                      className="px-3 py-1 text-sm rounded-full bg-muted/40 text-muted-foreground border border-border/60"
+                      className="px-3 py-1 text-sm rounded-full bg-[#f3efeb] text-[#615e5b] border border-[#dfddda]"
                     >
                       {tag}
                     </span>
