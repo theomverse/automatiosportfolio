@@ -8,52 +8,58 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    --background: 0 0% 0%;
-    --foreground: 0 0% 100%;
+    /* 4 Background Colors: white-smoke, white, black, dark-gray */
+    --white-smoke: 0 0% 93%;
+    --white: 0 0% 100%;
+    --black: 0 0% 0%;
+    --dark-gray: 0 0% 13%;
 
-    --card: 0 0% 5%;
-    --card-foreground: 0 0% 100%;
+    --background: var(--black);
+    --foreground: var(--white);
 
-    --popover: 0 0% 5%;
-    --popover-foreground: 0 0% 100%;
+    --card: var(--dark-gray);
+    --card-foreground: var(--white);
+
+    --popover: var(--dark-gray);
+    --popover-foreground: var(--white);
 
     --primary: 262 83% 58%;
-    --primary-foreground: 0 0% 100%;
+    --primary-foreground: var(--white);
 
     --secondary: 217 91% 60%;
-    --secondary-foreground: 0 0% 100%;
+    --secondary-foreground: var(--white);
 
-    --muted: 0 0% 10%;
-    --muted-foreground: 0 0% 70%;
+    --muted: var(--dark-gray);
+    --muted-foreground: var(--white-smoke);
 
     --accent: 330 85% 70%;
-    --accent-foreground: 0 0% 100%;
+    --accent-foreground: var(--white);
 
     --destructive: 0 84% 60%;
-    --destructive-foreground: 0 0% 100%;
+    --destructive-foreground: var(--white);
 
-    --border: 0 0% 15%;
-    --input: 0 0% 10%;
+    --border: 0 0% 20%;
+    --input: var(--dark-gray);
     --ring: 262 83% 58%;
 
     --radius: 1rem;
     
-    /* Custom gradient colors */
+    /* Custom gradient colors (kept for hero accents) */
     --gradient-violet: 262 83% 58%;
     --gradient-blue: 217 91% 60%;
     --gradient-pink: 330 85% 70%;
     
     /* Glassmorphism */
-    --glass-bg: 0 0% 5% / 0.6;
+    --glass-bg: 0 0% 13% / 0.6;
     --glass-border: 0 0% 100% / 0.1;
 
-    --sidebar-background: 0 0% 5%;
-    --sidebar-foreground: 0 0% 100%;
+    --sidebar-background: var(--dark-gray);
+    --sidebar-foreground: var(--white);
     --sidebar-primary: 262 83% 58%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 0 0% 10%;
-    --sidebar-accent-foreground: 0 0% 100%;
-    --sidebar-border: 0 0% 15%;
+    --sidebar-primary-foreground: var(--white);
+    --sidebar-accent: var(--dark-gray);
+    --sidebar-accent-foreground: var(--white);
+    --sidebar-border: 0 0% 20%;
     --sidebar-ring: 262 83% 58%;
   }
 
