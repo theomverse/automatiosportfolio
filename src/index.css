@@ -8,59 +8,83 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    /* 4 Background Colors: white-smoke, white, black, dark-gray */
-    --white-smoke: 0 0% 93%;
-    --white: 0 0% 100%;
-    --black: 0 0% 0%;
-    --dark-gray: 0 0% 13%;
+    /* 4 Background Colors */
+    --bg-light-gray: 35 13% 82%;
+    --bg-linen: 30 25% 94%;
+    --bg-white: 0 0% 100%;
+    --bg-black: 0 0% 7%;
 
-    --background: var(--black);
-    --foreground: var(--white);
+    /* 4 Text Colors */
+    --text-black: 0 0% 7%;
+    --text-dim-gray: 30 3% 37%;
+    --text-gray: 60 1% 54%;
+    --text-white: 0 0% 100%;
 
-    --card: var(--dark-gray);
-    --card-foreground: var(--white);
+    /* 6 CTA Colors */
+    --cta-black: 0 0% 0%;
+    --cta-black-1: 0 0% 7%;
+    --cta-lavender-300: 60 1% 54%;
+    --cta-lavender-400: 210 5% 92%;
+    --cta-lavender-500: 210 5% 92%;
+    --cta-white: 0 0% 100%;
 
-    --popover: var(--dark-gray);
-    --popover-foreground: var(--white);
+    /* 7 Border Colors */
+    --border-black: 0 0% 7%;
+    --border-dim-gray: 30 3% 37%;
+    --border-gray: 60 1% 54%;
+    --border-light-gray: 35 13% 82%;
+    --border-gainsboro: 36 7% 86%;
+    --border-lavender: 210 5% 92%;
+    --border-white: 0 0% 100%;
 
-    --primary: 262 83% 58%;
-    --primary-foreground: var(--white);
+    /* Semantic tokens */
+    --background: var(--bg-linen);
+    --foreground: var(--text-black);
 
-    --secondary: 217 91% 60%;
-    --secondary-foreground: var(--white);
+    --card: var(--bg-white);
+    --card-foreground: var(--text-black);
 
-    --muted: var(--dark-gray);
-    --muted-foreground: var(--white-smoke);
+    --popover: var(--bg-white);
+    --popover-foreground: var(--text-black);
 
-    --accent: 330 85% 70%;
-    --accent-foreground: var(--white);
+    --primary: var(--cta-black-1);
+    --primary-foreground: var(--text-white);
+
+    --secondary: var(--text-dim-gray);
+    --secondary-foreground: var(--text-white);
+
+    --muted: var(--bg-light-gray);
+    --muted-foreground: var(--text-dim-gray);
+
+    --accent: var(--cta-lavender-400);
+    --accent-foreground: var(--text-black);
 
     --destructive: 0 84% 60%;
-    --destructive-foreground: var(--white);
+    --destructive-foreground: var(--text-white);
 
-    --border: 0 0% 20%;
-    --input: var(--dark-gray);
-    --ring: 262 83% 58%;
+    --border: var(--border-gainsboro);
+    --input: var(--bg-white);
+    --ring: var(--border-black);
 
     --radius: 1rem;
     
-    /* Custom gradient colors (kept for hero accents) */
-    --gradient-violet: 262 83% 58%;
-    --gradient-blue: 217 91% 60%;
-    --gradient-pink: 330 85% 70%;
+    /* Custom gradient colors — neutral monochrome palette */
+    --gradient-dark: 0 0% 7%;
+    --gradient-mid: 30 3% 37%;
+    --gradient-light: 60 1% 54%;
     
-    /* Glassmorphism */
-    --glass-bg: 0 0% 13% / 0.6;
-    --glass-border: 0 0% 100% / 0.1;
+    /* Glassmorphism for light backgrounds */
+    --glass-bg: 0 0% 100% / 0.7;
+    --glass-border: 0 0% 7% / 0.08;
 
-    --sidebar-background: var(--dark-gray);
-    --sidebar-foreground: var(--white);
-    --sidebar-primary: 262 83% 58%;
-    --sidebar-primary-foreground: var(--white);
-    --sidebar-accent: var(--dark-gray);
-    --sidebar-accent-foreground: var(--white);
-    --sidebar-border: 0 0% 20%;
-    --sidebar-ring: 262 83% 58%;
+    --sidebar-background: var(--bg-white);
+    --sidebar-foreground: var(--text-black);
+    --sidebar-primary: var(--cta-black-1);
+    --sidebar-primary-foreground: var(--text-white);
+    --sidebar-accent: var(--bg-light-gray);
+    --sidebar-accent-foreground: var(--text-black);
+    --sidebar-border: var(--border-gainsboro);
+    --sidebar-ring: var(--border-black);
   }
 
   .dark {
@@ -85,17 +109,17 @@ All colors MUST be HSL.
 @layer utilities {
   .gradient-hero {
     background: linear-gradient(135deg, 
-      hsl(var(--gradient-violet)) 0%, 
-      hsl(var(--gradient-blue)) 50%, 
-      hsl(var(--gradient-pink)) 100%);
+      hsl(var(--gradient-dark)) 0%, 
+      hsl(var(--gradient-mid)) 50%, 
+      hsl(var(--gradient-light)) 100%);
     background-size: 200% 200%;
   }
 
   .gradient-text {
     background: linear-gradient(135deg, 
-      hsl(var(--gradient-violet)), 
-      hsl(var(--gradient-blue)), 
-      hsl(var(--gradient-pink)));
+      hsl(var(--gradient-dark)), 
+      hsl(var(--gradient-mid)), 
+      hsl(var(--gradient-light)));
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -109,7 +133,7 @@ All colors MUST be HSL.
   }
 
   .glow-border {
-    box-shadow: 0 0 20px hsl(var(--primary) / 0.3);
+    box-shadow: 0 0 20px hsl(var(--border-black) / 0.08);
   }
 
   .glow-hover {
@@ -117,7 +141,7 @@ All colors MUST be HSL.
   }
 
   .glow-hover:hover {
-    box-shadow: 0 0 30px hsl(var(--primary) / 0.5), 0 0 60px hsl(var(--secondary) / 0.3);
+    box-shadow: 0 0 30px hsl(var(--border-black) / 0.1), 0 0 60px hsl(var(--border-dim-gray) / 0.06);
     transform: translateY(-2px);
   }
 }
