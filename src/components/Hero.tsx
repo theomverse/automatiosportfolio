@@ -38,7 +38,7 @@ const Hero = () => {
         <div className="max-w-3xl">
           <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight tracking-tight text-white">
             AI Automation Developer &{" "}
-            <span className="gradient-text block mt-2">
+            <span className="text-white block mt-2">
               n8n Specialist
             </span>
           </h1>
