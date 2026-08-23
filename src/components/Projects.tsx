@@ -28,7 +28,8 @@ const caseStudies = [
     solution:
       "An AI support agent answers common questions from a knowledge base, books meetings on the calendar, and escalates edge cases to a human with full context.",
     stack: ["n8n", "Gemini", "Google Calendar", "Gmail", "Webhooks"],
-    flow: "Message → n8n → AI Agent → Knowledge Base → Calendar Booking → Escalation"
+    image: customerSupportWorkflow.url,
+    imageAlt: "Customer support booking automation workflow in n8n"
   },
   {
     title: "AI Content Repurposing Agent",
