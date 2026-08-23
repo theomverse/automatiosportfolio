@@ -1,6 +1,7 @@
-import { Github, Play } from "lucide-react";
+import { Github } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 import { Button } from "./ui/button";
+import customerSupportWorkflow from "@/assets/ai_customer_support_img.jpg.asset.json";
 
 const GITHUB_URL = "https://github.com/";
 
@@ -27,7 +28,8 @@ const caseStudies = [
     solution:
       "An AI support agent answers common questions from a knowledge base, books meetings on the calendar, and escalates edge cases to a human with full context.",
     stack: ["n8n", "Gemini", "Google Calendar", "Gmail", "Webhooks"],
-    flow: "Message → n8n → AI Agent → Knowledge Base → Calendar Booking → Escalation"
+    image: customerSupportWorkflow.url,
+    imageAlt: "Customer support booking automation workflow in n8n"
   },
   {
     title: "AI Content Repurposing Agent",
@@ -96,12 +98,25 @@ const CaseStudyCard = ({ study, index }: { study: typeof caseStudies[0]; index: 
         </div>
       </div>
 
-      <div className="mb-6">
-        <p className="text-sm font-semibold uppercase tracking-wide text-[#615e5b] mb-2">Workflow</p>
-        <div className="rounded-2xl bg-[#f3efeb] border border-[#dfddda] px-4 py-3 overflow-x-auto">
-          <code className="text-sm text-[#111111] whitespace-nowrap">{study.flow}</code>
+      {study.image ? (
+        <div className="mb-6">
+          <p className="text-sm font-semibold uppercase tracking-wide text-[#615e5b] mb-2">Workflow</p>
+          <div className="rounded-xl border border-[#dfddda] bg-[#f3efeb] p-2 overflow-hidden shadow-sm">
+            <img
+              src={study.image}
+              alt={study.imageAlt || `${study.title} workflow`}
+              className="w-full max-w-[680px] h-auto max-h-[320px] object-contain rounded-lg mx-auto"
+            />
+          </div>
         </div>
-      </div>
+      ) : study.flow ? (
+        <div className="mb-6">
+          <p className="text-sm font-semibold uppercase tracking-wide text-[#615e5b] mb-2">Workflow</p>
+          <div className="rounded-2xl bg-[#f3efeb] border border-[#dfddda] px-4 py-3 overflow-x-auto">
+            <code className="text-sm text-[#111111] whitespace-nowrap">{study.flow}</code>
+          </div>
+        </div>
+      ) : null}
 
       <div className="flex flex-wrap gap-2 mb-6">
         {study.stack.map((tag) => (
@@ -115,10 +130,6 @@ const CaseStudyCard = ({ study, index }: { study: typeof caseStudies[0]; index: 
       </div>
 
       <div className="flex flex-wrap gap-3">
-        <Button variant="outline" className="rounded-full border-[#dfddda] text-[#111111]" disabled>
-          <Play className="w-4 h-4 mr-2" />
-          Demo Video — Coming Soon
-        </Button>
         <Button
           variant="ghost"
           className="rounded-full text-[#111111] hover:bg-[#f3efeb]"
