@@ -1,6 +1,7 @@
-import { Github, Play } from "lucide-react";
+import { Github } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 import { Button } from "./ui/button";
+import customerSupportWorkflow from "@/assets/ai_customer_support_img.jpg.asset.json";
 
 const GITHUB_URL = "https://github.com/";
 
