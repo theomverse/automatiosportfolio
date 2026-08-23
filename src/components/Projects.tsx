@@ -98,12 +98,18 @@ const CaseStudyCard = ({ study, index }: { study: typeof caseStudies[0]; index: 
         </div>
       </div>
 
-      <div className="mb-6">
-        <p className="text-sm font-semibold uppercase tracking-wide text-[#615e5b] mb-2">Workflow</p>
-        <div className="rounded-2xl bg-[#f3efeb] border border-[#dfddda] px-4 py-3 overflow-x-auto">
-          <code className="text-sm text-[#111111] whitespace-nowrap">{study.flow}</code>
+      {study.image && (
+        <div className="mb-6">
+          <p className="text-sm font-semibold uppercase tracking-wide text-[#615e5b] mb-2">Workflow</p>
+          <div className="rounded-xl border border-[#dfddda] bg-[#f3efeb] p-2 overflow-hidden shadow-sm">
+            <img
+              src={study.image}
+              alt={study.imageAlt || `${study.title} workflow`}
+              className="w-full max-w-[680px] h-auto max-h-[320px] object-contain rounded-lg mx-auto"
+            />
+          </div>
         </div>
-      </div>
+      )}
 
       <div className="flex flex-wrap gap-2 mb-6">
         {study.stack.map((tag) => (
@@ -117,10 +123,6 @@ const CaseStudyCard = ({ study, index }: { study: typeof caseStudies[0]; index: 
       </div>
 
       <div className="flex flex-wrap gap-3">
-        <Button variant="outline" className="rounded-full border-[#dfddda] text-[#111111]" disabled>
-          <Play className="w-4 h-4 mr-2" />
-          Demo Video — Coming Soon
-        </Button>
         <Button
           variant="ghost"
           className="rounded-full text-[#111111] hover:bg-[#f3efeb]"
