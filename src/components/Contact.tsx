@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { Send, Mail, Linkedin, Github, Package } from "lucide-react";
+import { Send, Mail, Linkedin, Github, Phone, Package } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 
 const Contact = () => {
@@ -106,7 +106,7 @@ const Contact = () => {
           
           <div className="grid md:grid-cols-3 gap-6">
             <a 
-              href="https://github.com/" 
+              href="https://github.com/KamasaniMohith/automation-workflows-n8n" 
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-4 p-4 rounded-2xl bg-[#f3efeb] hover:bg-[#dfddda] transition-all glow-hover"
@@ -116,7 +116,7 @@ const Contact = () => {
               </div>
               <div>
                 <p className="text-sm text-[#615e5b]">GitHub</p>
-                <p className="font-medium text-[#111111]">View my repositories</p>
+                <p className="font-medium text-[#111111]">automation-workflows-n8n</p>
               </div>
             </a>
 
@@ -136,7 +136,7 @@ const Contact = () => {
             </a>
 
             <a 
-              href="mailto:omverse69@example.com" 
+              href="mailto:mohithmains@gmail.com" 
               className="flex items-center gap-4 p-4 rounded-2xl bg-[#f3efeb] hover:bg-[#dfddda] transition-all glow-hover"
             >
               <div className="w-12 h-12 rounded-full bg-[#111111]/10 flex items-center justify-center">
@@ -144,7 +144,20 @@ const Contact = () => {
               </div>
               <div>
                 <p className="text-sm text-[#615e5b]">Email</p>
-                <p className="font-medium text-[#111111]">omverse69@example.com</p>
+                <p className="font-medium text-[#111111]">mohithmains@gmail.com</p>
+              </div>
+            </a>
+
+            <a 
+              href="tel:+919515751794" 
+              className="flex items-center gap-4 p-4 rounded-2xl bg-[#f3efeb] hover:bg-[#dfddda] transition-all glow-hover"
+            >
+              <div className="w-12 h-12 rounded-full bg-[#111111]/10 flex items-center justify-center">
+                <Phone className="w-6 h-6 text-[#111111]" />
+              </div>
+              <div>
+                <p className="text-sm text-[#615e5b]">Mobile</p>
+                <p className="font-medium text-[#111111]">+91 95157 51794</p>
               </div>
             </a>
           </div>
