@@ -98,7 +98,7 @@ const CaseStudyCard = ({ study, index }: { study: typeof caseStudies[0]; index: 
         </div>
       </div>
 
-      {study.image && (
+      {study.image ? (
         <div className="mb-6">
           <p className="text-sm font-semibold uppercase tracking-wide text-[#615e5b] mb-2">Workflow</p>
           <div className="rounded-xl border border-[#dfddda] bg-[#f3efeb] p-2 overflow-hidden shadow-sm">
@@ -109,7 +109,14 @@ const CaseStudyCard = ({ study, index }: { study: typeof caseStudies[0]; index: 
             />
           </div>
         </div>
-      )}
+      ) : study.flow ? (
+        <div className="mb-6">
+          <p className="text-sm font-semibold uppercase tracking-wide text-[#615e5b] mb-2">Workflow</p>
+          <div className="rounded-2xl bg-[#f3efeb] border border-[#dfddda] px-4 py-3 overflow-x-auto">
+            <code className="text-sm text-[#111111] whitespace-nowrap">{study.flow}</code>
+          </div>
+        </div>
+      ) : null}
 
       <div className="flex flex-wrap gap-2 mb-6">
         {study.stack.map((tag) => (
