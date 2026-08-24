@@ -2,6 +2,7 @@ import { Github } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 import { Button } from "./ui/button";
 import customerSupportWorkflow from "@/assets/ai_customer_support_img.jpg.asset.json";
+import customerSupportFaqImg from "@/assets/customer_support_faq_sheet.jpg.asset.json";
 import salesReportImg from "@/assets/sales_report.jpg.asset.json";
 import smartReportImg from "@/assets/smart_report.jpg.asset.json";
 import bookingWorkflowImg from "@/assets/ai_booking_system_workflow.jpg.asset.json";
@@ -35,8 +36,10 @@ const caseStudies = [
     solution:
       "An AI support agent answers common questions from a knowledge base, books meetings on the calendar, and escalates edge cases to a human with full context.",
     stack: ["n8n", "Gemini", "Google Calendar", "Gmail", "Webhooks"],
-    image: customerSupportWorkflow.url,
-    imageAlt: "Customer support booking automation workflow in n8n"
+    images: [
+      { src: customerSupportWorkflow.url, alt: "Customer support booking automation workflow in n8n" },
+      { src: customerSupportFaqImg.url, alt: "Customer support FAQ knowledge base in Google Sheets" }
+    ]
   },
   {
     title: "SmartReport AI Sales Intelligence",
@@ -112,17 +115,6 @@ const CaseStudyCard = ({ study, index }: { study: typeof caseStudies[0]; index: 
                 className="w-full h-auto max-h-[280px] object-contain rounded-lg"
               />
             ))}
-          </div>
-        </div>
-      ) : study.image ? (
-        <div className="mb-6">
-          <p className="text-sm font-semibold uppercase tracking-wide text-[#615e5b] mb-2">Workflow</p>
-          <div className="rounded-xl border border-[#dfddda] bg-[#f3efeb] p-2 overflow-hidden shadow-sm">
-            <img
-              src={study.image}
-              alt={study.imageAlt || `${study.title} workflow`}
-              className="w-full max-w-[680px] h-auto max-h-[320px] object-contain rounded-lg mx-auto"
-            />
           </div>
         </div>
       ) : study.flow ? (
