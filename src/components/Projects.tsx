@@ -2,6 +2,8 @@ import { Github } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 import { Button } from "./ui/button";
 import customerSupportWorkflow from "@/assets/ai_customer_support_img.jpg.asset.json";
+import salesReportImg from "@/assets/sales_report.jpg.asset.json";
+import smartReportImg from "@/assets/smart_report.jpg.asset.json";
 
 const GITHUB_URL = "https://github.com/";
 
@@ -45,7 +47,10 @@ const caseStudies = [
     solution:
       "Sales data is pulled automatically, analyzed by AI for trends and anomalies, visualized as charts, and delivered as a report every week.",
     stack: ["n8n", "Google Sheets", "Gemini", "QuickChart", "Gmail"],
-    flow: "Google Sheets → n8n → AI Analysis → Charts → Email Report"
+    images: [
+      { src: smartReportImg.url, alt: "SmartReport n8n automation workflow canvas" },
+      { src: salesReportImg.url, alt: "Weekly Sales Intelligence AI-generated report" }
+    ]
   }
 ];
 
@@ -98,7 +103,21 @@ const CaseStudyCard = ({ study, index }: { study: typeof caseStudies[0]; index: 
         </div>
       </div>
 
-      {study.image ? (
+      {study.images ? (
+        <div className="mb-6">
+          <p className="text-sm font-semibold uppercase tracking-wide text-[#615e5b] mb-2">Workflow</p>
+          <div className="grid md:grid-cols-2 gap-4 rounded-xl border border-[#dfddda] bg-[#f3efeb] p-3 overflow-hidden shadow-sm">
+            {study.images.map((img) => (
+              <img
+                key={img.src}
+                src={img.src}
+                alt={img.alt}
+                className="w-full h-auto max-h-[280px] object-contain rounded-lg"
+              />
+            ))}
+          </div>
+        </div>
+      ) : study.image ? (
         <div className="mb-6">
           <p className="text-sm font-semibold uppercase tracking-wide text-[#615e5b] mb-2">Workflow</p>
           <div className="rounded-xl border border-[#dfddda] bg-[#f3efeb] p-2 overflow-hidden shadow-sm">
