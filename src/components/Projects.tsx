@@ -36,8 +36,10 @@ const caseStudies = [
     solution:
       "An AI support agent answers common questions from a knowledge base, books meetings on the calendar, and escalates edge cases to a human with full context.",
     stack: ["n8n", "Gemini", "Google Calendar", "Gmail", "Webhooks"],
-    image: customerSupportWorkflow.url,
-    imageAlt: "Customer support booking automation workflow in n8n"
+    images: [
+      { src: customerSupportWorkflow.url, alt: "Customer support booking automation workflow in n8n" },
+      { src: customerSupportFaqImg.url, alt: "Customer support FAQ knowledge base in Google Sheets" }
+    ]
   },
   {
     title: "SmartReport AI Sales Intelligence",
