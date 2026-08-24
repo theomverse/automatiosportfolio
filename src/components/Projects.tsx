@@ -117,17 +117,6 @@ const CaseStudyCard = ({ study, index }: { study: typeof caseStudies[0]; index: 
             ))}
           </div>
         </div>
-      ) : study.image ? (
-        <div className="mb-6">
-          <p className="text-sm font-semibold uppercase tracking-wide text-[#615e5b] mb-2">Workflow</p>
-          <div className="rounded-xl border border-[#dfddda] bg-[#f3efeb] p-2 overflow-hidden shadow-sm">
-            <img
-              src={study.image}
-              alt={study.imageAlt || `${study.title} workflow`}
-              className="w-full max-w-[680px] h-auto max-h-[320px] object-contain rounded-lg mx-auto"
-            />
-          </div>
-        </div>
       ) : study.flow ? (
         <div className="mb-6">
           <p className="text-sm font-semibold uppercase tracking-wide text-[#615e5b] mb-2">Workflow</p>
