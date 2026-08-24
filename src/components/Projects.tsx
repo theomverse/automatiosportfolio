@@ -112,7 +112,7 @@ const CaseStudyCard = ({ study, index }: { study: typeof caseStudies[0]; index: 
                 key={img.src}
                 src={img.src}
                 alt={img.alt}
-                className="w-full h-auto max-h-[280px] object-contain rounded-lg bg-white"
+                className="w-full h-auto max-h-[280px] object-contain rounded-lg"
               />
             ))}
           </div>
