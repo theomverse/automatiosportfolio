@@ -47,7 +47,10 @@ const caseStudies = [
     solution:
       "Sales data is pulled automatically, analyzed by AI for trends and anomalies, visualized as charts, and delivered as a report every week.",
     stack: ["n8n", "Google Sheets", "Gemini", "QuickChart", "Gmail"],
-    flow: "Google Sheets → n8n → AI Analysis → Charts → Email Report"
+    images: [
+      { src: smartReportImg.url, alt: "SmartReport n8n automation workflow canvas" },
+      { src: salesReportImg.url, alt: "Weekly Sales Intelligence AI-generated report" }
+    ]
   }
 ];
 
