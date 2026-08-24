@@ -103,7 +103,21 @@ const CaseStudyCard = ({ study, index }: { study: typeof caseStudies[0]; index: 
         </div>
       </div>
 
-      {study.image ? (
+      {study.images ? (
+        <div className="mb-6">
+          <p className="text-sm font-semibold uppercase tracking-wide text-[#615e5b] mb-2">Workflow</p>
+          <div className="grid md:grid-cols-2 gap-4 rounded-xl border border-[#dfddda] bg-[#f3efeb] p-3 overflow-hidden shadow-sm">
+            {study.images.map((img) => (
+              <img
+                key={img.src}
+                src={img.src}
+                alt={img.alt}
+                className="w-full h-auto max-h-[280px] object-contain rounded-lg bg-white"
+              />
+            ))}
+          </div>
+        </div>
+      ) : study.image ? (
         <div className="mb-6">
           <p className="text-sm font-semibold uppercase tracking-wide text-[#615e5b] mb-2">Workflow</p>
           <div className="rounded-xl border border-[#dfddda] bg-[#f3efeb] p-2 overflow-hidden shadow-sm">
