@@ -4,6 +4,8 @@ import { Button } from "./ui/button";
 import customerSupportWorkflow from "@/assets/ai_customer_support_img.jpg.asset.json";
 import salesReportImg from "@/assets/sales_report.jpg.asset.json";
 import smartReportImg from "@/assets/smart_report.jpg.asset.json";
+import bookingWorkflowImg from "@/assets/ai_booking_system_workflow.jpg.asset.json";
+import bookingReminderImg from "@/assets/booking_reminder_email.jpg.asset.json";
 
 const GITHUB_URL = "https://github.com/";
 
@@ -17,12 +19,15 @@ const caseStudies = [
     flow: "Lead Form → n8n → AI Model → CRM → Email Notification"
   },
   {
-    title: "AI SDR System",
-    problem: "Outbound prospecting is repetitive and inconsistent at scale.",
+    title: "AI-Powered Booking System",
+    problem: "Manual appointment scheduling creates back-and-forth emails, missed slots, and no-shows.",
     solution:
-      "Automated prospect research, personalized first-touch copy generation, and multi-step follow-up sequencing with reply detection and handoff to a human.",
-    stack: ["n8n", "OpenAI", "Google Sheets", "Email API"],
-    flow: "Prospect List → n8n → Research + AI Copy → Email Sequence → Reply Handoff"
+      "An end-to-end booking automation that checks real-time calendar availability, creates events, logs bookings, sends confirmation emails, and automatically reminds clients 24 hours before the appointment.",
+    stack: ["n8n", "Google Calendar", "Gmail", "Webhooks", "Google Sheets"],
+    images: [
+      { src: bookingWorkflowImg.url, alt: "AI booking system n8n automation workflow canvas" },
+      { src: bookingReminderImg.url, alt: "Automated appointment reminder email sent by the booking system" }
+    ]
   },
   {
     title: "Customer Support Booking Workflow",
@@ -32,14 +37,6 @@ const caseStudies = [
     stack: ["n8n", "Gemini", "Google Calendar", "Gmail", "Webhooks"],
     image: customerSupportWorkflow.url,
     imageAlt: "Customer support booking automation workflow in n8n"
-  },
-  {
-    title: "AI Content Repurposing Agent",
-    problem: "Creators spend hours reformatting one piece of content for every channel.",
-    solution:
-      "One source asset is transcribed, summarized, and rewritten into channel-native posts, then queued for scheduled publishing and approval.",
-    stack: ["n8n", "OpenAI", "Notion", "Social APIs"],
-    flow: "Source Content → n8n → AI Rewrite → Approval → Scheduled Publishing"
   },
   {
     title: "SmartReport AI Sales Intelligence",
