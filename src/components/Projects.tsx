@@ -8,7 +8,7 @@ import smartReportImg from "@/assets/smart_report.jpg.asset.json";
 import bookingWorkflowImg from "@/assets/ai_booking_system_workflow.jpg.asset.json";
 import bookingReminderImg from "@/assets/booking_reminder_email.jpg.asset.json";
 
-const GITHUB_URL = "https://github.com/";
+const GITHUB_URL = "https://github.com/KamasaniMohith/automation-workflows-n8n";
 const LOVABLE_ASSET_ORIGIN = "https://mr-ai-flux.lovable.app";
 
 const getHostedAssetUrl = (assetPath: string) =>
