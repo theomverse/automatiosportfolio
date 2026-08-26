@@ -9,6 +9,10 @@ import bookingWorkflowImg from "@/assets/ai_booking_system_workflow.jpg.asset.js
 import bookingReminderImg from "@/assets/booking_reminder_email.jpg.asset.json";
 
 const GITHUB_URL = "https://github.com/";
+const LOVABLE_ASSET_ORIGIN = "https://mr-ai-flux.lovable.app";
+
+const getHostedAssetUrl = (assetPath: string) =>
+  assetPath.startsWith("http") ? assetPath : `${LOVABLE_ASSET_ORIGIN}${assetPath}`;
 
 const caseStudies = [
   {
@@ -26,8 +30,8 @@ const caseStudies = [
       "An end-to-end booking automation that checks real-time calendar availability, creates events, logs bookings, sends confirmation emails, and automatically reminds clients 24 hours before the appointment.",
     stack: ["n8n", "Google Calendar", "Gmail", "Webhooks", "Google Sheets"],
     images: [
-      { src: bookingWorkflowImg.url, alt: "AI booking system n8n automation workflow canvas" },
-      { src: bookingReminderImg.url, alt: "Automated appointment reminder email sent by the booking system" }
+      { src: getHostedAssetUrl(bookingWorkflowImg.url), alt: "AI booking system n8n automation workflow canvas" },
+      { src: getHostedAssetUrl(bookingReminderImg.url), alt: "Automated appointment reminder email sent by the booking system" }
     ]
   },
   {
@@ -37,8 +41,8 @@ const caseStudies = [
       "An AI support agent answers common questions from a knowledge base, books meetings on the calendar, and escalates edge cases to a human with full context.",
     stack: ["n8n", "Gemini", "Google Calendar", "Gmail", "Webhooks"],
     images: [
-      { src: customerSupportWorkflow.url, alt: "Customer support booking automation workflow in n8n" },
-      { src: customerSupportFaqImg.url, alt: "Customer support FAQ knowledge base in Google Sheets" }
+      { src: getHostedAssetUrl(customerSupportWorkflow.url), alt: "Customer support booking automation workflow in n8n" },
+      { src: getHostedAssetUrl(customerSupportFaqImg.url), alt: "Customer support FAQ knowledge base in Google Sheets" }
     ]
   },
   {
@@ -48,8 +52,8 @@ const caseStudies = [
       "Sales data is pulled automatically, analyzed by AI for trends and anomalies, visualized as charts, and delivered as a report every week.",
     stack: ["n8n", "Google Sheets", "Gemini", "QuickChart", "Gmail"],
     images: [
-      { src: smartReportImg.url, alt: "SmartReport n8n automation workflow canvas" },
-      { src: salesReportImg.url, alt: "Weekly Sales Intelligence AI-generated report" }
+      { src: getHostedAssetUrl(smartReportImg.url), alt: "SmartReport n8n automation workflow canvas" },
+      { src: getHostedAssetUrl(salesReportImg.url), alt: "Weekly Sales Intelligence AI-generated report" }
     ]
   }
 ];
